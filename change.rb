@@ -4,31 +4,15 @@
 # => [25, 10, 1, 1, 1, 1]
 
 def change_maker(amount)
-
+	coin_values = [25, 10, 5, 1]
 	coins = []
 
-	while (amount - 25) >= 0
-		coins.push(25)
-		amount -= 25
+	coin_values.each do |value|
+		while amount >= value
+			coins.push(value)
+			amount -= value
 	end
-
-	while (amount - 10) >= 0
-		coins.push(10)
-		amount -= 10
-	end
-
-	while (amount - 5) >= 0
-		coins.push(5)
-		amount -= 5
-	end
-
-	while (amount - 1) >= 0
-		coins.push(1)
-		amount -= 1
-	end
-
-	coins
-
 end
 
-# p change_maker(39)
+	coins
+end
